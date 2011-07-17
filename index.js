@@ -30,7 +30,7 @@ var get = function(url, options, callback) {
 exports.get = get;
 
 var post = function(url, body, options, callback) {
-	if(!callback) {
+	if(!callback && typeof options === 'function') {
 		callback = options;
 		options = {};
 	}
