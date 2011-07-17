@@ -1,5 +1,7 @@
 var request = require('request');
 
+var noop = function() {};
+
 var merge = function() {
 	var result = {};
 
@@ -32,6 +34,7 @@ var post = function(url, body, options, callback) {
 		callback = options;
 		options = {};
 	}
+	callback = callback || noop;
 	
 	var options = merge(options,{
 		method: 'PUT',
@@ -67,7 +70,7 @@ var postJSON = function(url, data, options, callback) {
 		callback = options;
 		options = {};
 	}
-
+	
 	var options = merge(options, {'content-type': 'application/json'});
 	
 	delete options.uri;
