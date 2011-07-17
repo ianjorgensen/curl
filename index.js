@@ -25,6 +25,7 @@ var get = function(url, options, callback) {
 	
 	request(options, callback);
 };
+exports.get = get;
 
 var post = function(url, body, options, callback) {
 	if(!callback) {
@@ -43,6 +44,7 @@ var post = function(url, body, options, callback) {
 	
 	request(options, callback);
 };
+exports.post = post;
 
 var getJSON = function(url, options, callback) {
 	if(!callback) {
@@ -58,6 +60,7 @@ var getJSON = function(url, options, callback) {
 		callback(null, response, JSON.parse(body))
 	});
 };
+exports.getJSON = getJSON;
 
 var postJSON = function(url, data, options, callback) {
 	if(!callback) {
@@ -71,3 +74,4 @@ var postJSON = function(url, data, options, callback) {
 	
 	post(url, JSON.stringify(data), options, callback);
 };
+exports.postJSON = postJSON;
