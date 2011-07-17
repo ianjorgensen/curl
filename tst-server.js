@@ -35,8 +35,8 @@ server.post('/post', function (request, response) {
 			return;
 		}
 		console.log(data);
-		response.end();
+		response.end('that\'s all folks \n');
 	})
 });
 
-server.listen(9090);
+server.listen(10001);

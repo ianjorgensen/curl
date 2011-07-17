@@ -34,15 +34,15 @@ var post = function(url, body, options, callback) {
 		callback = options;
 		options = {};
 	}
+
 	callback = callback || noop;
 	
 	var options = merge(options,{
-		method: 'PUT',
+		method: 'POST',
 		url: url,
-		body: body,
-		'content-length': body.length
+		body: body
 	});
-	
+		
 	delete options.uri;
 	
 	request(options, callback);
